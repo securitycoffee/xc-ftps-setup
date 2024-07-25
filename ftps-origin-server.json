@@ -1,0 +1,37 @@
+{
+    "metadata": {
+      "name": "<insert your origin server name>",
+      "namespace": "k-baum",
+      "labels": {},
+      "annotations": {},
+      "description": "Have to keep this origin pool for the ip persistence setup",
+      "disable": false
+    },
+    "spec": {
+      "origin_servers": [
+        {
+          "public_ip": {
+            "ip": "<your public ip>"
+          },
+          "labels": {}
+        }
+      ],
+      "no_tls": {},
+      "lb_port": {},
+      "same_as_endpoint_port": {},
+      "healthcheck": [],
+      "loadbalancer_algorithm": "LB_OVERRIDE",
+      "endpoint_selection": "LOCAL_PREFERRED",
+      "advanced_options": {
+        "connection_timeout": 300000,
+        "http_idle_timeout": 300000,
+        "default_circuit_breaker": {},
+        "disable_outlier_detection": {},
+        "no_panic_threshold": {},
+        "disable_subsets": {},
+        "auto_http_config": {},
+        "enable_lb_source_ip_persistance": {},
+        "disable_proxy_protocol": {}
+      }
+    }
+  }

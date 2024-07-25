@@ -1,0 +1,46 @@
+{
+    "metadata": {
+      "name": "ftp-test",
+      "namespace": "k-baum",
+      "labels": {},
+      "annotations": {},
+      "disable": false
+    },
+    "spec": {
+      "domains": [
+        "<insert your fqdn>"
+      ],
+      "port_ranges": "990,3000-3003",
+      "no_sni": {},
+      "dns_volterra_managed": false,
+      "origin_pools": [],
+      "origin_pools_weights": [
+        {
+          "pool": {
+            "tenant": "<the xc tenant id>",
+            "namespace": "k-baum",
+            "name": "<insert your origin server name>",
+            "kind": "origin_pool"
+          },
+          "weight": 1,
+          "priority": 1,
+          "endpoint_subsets": {}
+        }
+      ],
+      "advertise_on_public_default_vip": {},
+      "hash_policy_choice_round_robin": {},
+      "idle_timeout": 3600000,
+      "retract_cluster": {},
+      "tcp": {},
+      "no_service_policies": {},
+      "host_name": "<volterra host name>",
+      "dns_info": [
+        {
+          "ip_address": "<the xc re public ip assigned>"
+        }
+      ],
+      "downstream_tls_certificate_expiration_timestamps": [],
+      "internet_vip_info": [],
+      "cert_state": "AutoCertNotApplicable"
+    }
+  }
